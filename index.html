@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Joseph Akaadom — Digital Solutions Engineer specializing in Cybersecurity, Data Analytics, Software & Game Development, and Power Platform automation. Based in Maryland, USA.">
+<meta name="keywords" content="Joseph Akaadom, cybersecurity analyst, digital solutions engineer, IAM, game development, power platform, data analytics, Maryland, Python, Splunk, Unity, Flutter, React">
+<meta property="og:title" content="Joseph Akaadom · Digital Solutions Engineer">
+<meta property="og:description" content="Cybersecurity · Data Analytics · Game Development · Power Platform. Based in Maryland, open to work.">
+<title>Joseph Akaadom · Digital Solutions Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --ink: #111318;
+  --ink2: #1e2330;
+  --white: #ffffff;
+  --off: #f7f7f5;
+  --off2: #f0f0ec;
+  --g100: #f4f4f2;
+  --g200: #e8e8e4;
+  --g300: #d0d0ca;
+  --g400: #a0a09a;
+  --g500: #707068;
+  --g600: #4a4a44;
+  --g700: #2e2e2a;
+  --accent: #1a1aff;
+  --accent2: #4444ff;
+  --accent-pale: #f0f0ff;
+  --green: #1a7a4a;
+  --green-pale: #edfaf3;
+  --amber: #b45309;
+  --amber-pale: #fffbeb;
+  --red: #cc2222;
+  --teal: #0d7a6a;
+  --teal-pale: #edfaf8;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Instrument Sans', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--white); }
+::-webkit-scrollbar-thumb { background: var(--g300); border-radius: 4px; }
+
+/* ── UTIL ── */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+.mono {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--g400);
+}
+
+.dot-live {
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(26,122,74,0.15);
+  animation: livepulse 2s ease infinite;
+}
+
+@keyframes livepulse {
+  0%,100% { box-shadow: 0 0 0 3px rgba(26,122,74,0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(26,122,74,0.05); }
+}
+
+/* ── FADE IN ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: 0.05s; }
+.reveal.d2 { transition-delay: 0.12s; }
+.reveal.d3 { transition-delay: 0.19s; }
+.reveal.d4 { transition-delay: 0.26s; }
+.reveal.d5 { transition-delay: 0.33s; }
+.reveal.d6 { transition-delay: 0.40s; }
+
+/* ══════════════════════════════
+   NAV
+══════════════════════════════ */
+nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 300;
+  height: 60px;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--g200);
+  transition: box-shadow 0.2s;
+}
+nav.up { box-shadow: var(--shadow-sm); }
+
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 32px; height: 32px;
+  background: var(--ink);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: white;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--g500);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-menu a:hover { background: var(--g100); color: var(--ink); }
+
+.nav-hire {
+  background: var(--ink) !important;
+  color: white !important;
+  border-radius: 100px !important;
+  padding: 0.45rem 1.1rem !important;
+  font-weight: 600 !important;
+  transition: background 0.15s, transform 0.15s !important;
+}
+
+.nav-hire:hover {
+  background: var(--ink2) !important;
+  transform: translateY(-1px);
+}
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero {
+  padding: 112px 0 72px;
+  position: relative;
+}
+
+/* subtle texture */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--g200) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem 0.3rem 0.55rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-badge-text {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--green);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 7vw, 5.8rem);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.hero-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-role {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--g400);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-role::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--g300);
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  color: var(--g500);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s var(--ease);
+  border-radius: 100px;
+  padding: 0.72rem 1.6rem;
+  white-space: nowrap;
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: white;
+}
+.btn-dark:hover { background: var(--ink2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+.btn-light {
+  background: var(--white);
+  color: var(--ink);
+  border: 1.5px solid var(--g300);
+}
+.btn-light:hover { border-color: var(--ink); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+.hero-numbers {
+  display: flex;
+  gap: 2.5rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--g200);
+}
+
+.hn { display: flex; flex-direction: column; gap: 0.15rem; }
+
+.hn-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.hn-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--g400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── PROFILE CARD ── */
+.profile-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 80px;
+}
+
+.pc-top {
+  background: var(--ink);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pc-top::after {
+  content: 'JA';
+  position: absolute;
+  bottom: -20px; right: -10px;
+  font-family: var(--serif);
+  font-size: 6rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pc-avatar {
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: white;
+  margin-bottom: 0.9rem;
+  border: 2px solid rgba(255,255,255,0.12);
+}
+
+.pc-name {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.01em;
+}
+
+.pc-title {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pc-body { padding: 0; }
+
+.pc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--g100);
+  transition: background 0.15s;
+}
+
+.pc-row:last-child { border-bottom: none; }
+.pc-row:hover { background: var(--off); }
+
+.pc-icon {
+  width: 30px; height: 30px;
+  border-radius: 7px;
+  background: var(--g100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.pc-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--g400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.pc-val {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  margin-top: 0.05rem;
+}
+
+.open-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--green-pale);
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  border: 1px solid rgba(26,122,74,0.15);
+  margin-top: 0.2rem;
+}
+
+/* ══════════════════════════════
+   SECTION SHELL
+══════════════════════════════ */
+.section {
+  padding: 6rem 0;
+}
+
+.section.alt {
+  background: var(--off);
+  border-top: 1px solid var(--g200);
+  border-bottom: 1px solid var(--g200);
+}
+
+.sh {
+  margin-bottom: 3rem;
+}
+
+.sh-eye {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sh-eye::before {
+  content: '';
+  display: block;
+  width: 16px; height: 1px;
+  background: var(--accent);
+}
+
+.sh-title {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ══════════════════════════════
+   TECH STRIP
+══════════════════════════════ */
+.tech-strip {
+  background: var(--ink);
+  padding: 1.75rem 0;
+  overflow: hidden;
+}
+
+.tech-scroll {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.tech-pill {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  transition: all 0.15s;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.tech-pill:hover {
+  color: white;
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* ══════════════════════════════
+   SKILLS
+══════════════════════════════ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--g200);
+  border: 1px solid var(--g200);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.skill-cell {
+  background: var(--white);
+  padding: 1.75rem;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.skill-cell:hover { background: var(--off); }
+
+.sc-num {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--g300);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.sc-icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.9rem;
+  display: block;
+}
+
+.sc-name {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.sc-desc {
+  font-size: 0.845rem;
+  color: var(--g500);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.sc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--g500);
+  background: var(--g100);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ══════════════════════════════
+   EXPERIENCE
+══════════════════════════════ */
+.exp-list { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.exp-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  transition: all 0.2s;
+}
+
+.exp-card:hover { border-color: var(--g300); box-shadow: var(--shadow-md); }
+
+.exp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exp-company {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.exp-period {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--g400);
+  background: var(--g100);
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.exp-role {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.exp-bullets li {
+  font-size: 0.9rem;
+  color: var(--g600);
+  line-height: 1.65;
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.exp-bullets li::before {
+  content: '—';
+  color: var(--g300);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  font-size: 0.75rem;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--g100);
+}
+
+/* ══════════════════════════════
+   PROJECTS
+══════════════════════════════ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.proj-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.proj-card:hover { box-shadow: var(--shadow-md); border-color: var(--g300); transform: translateY(-3px); }
+
+.proj-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.proj-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.proj-badge {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 100px;
+}
+
+.pb-green { background: var(--green-pale); color: var(--green); }
+.pb-blue { background: var(--accent-pale); color: var(--accent); }
+.pb-amber { background: var(--amber-pale); color: var(--amber); }
+.pb-teal { background: var(--teal-pale); color: var(--teal); }
+
+.proj-name {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.proj-desc {
+  font-size: 0.845rem;
+  color: var(--g500);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--g100);
+}
+
+/* ══════════════════════════════
+   CERTS
+══════════════════════════════ */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.cert-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.cert-card:hover { border-color: var(--ink); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+.cert-icon {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--g100);
+  border: 1.5px solid var(--g200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 0 auto 1rem;
+  transition: all 0.2s;
+}
+
+.cert-card:hover .cert-icon {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.cert-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.cert-org {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--g400);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cert-status {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 100px;
+}
+
+.cs-done { background: var(--green-pale); color: var(--green); }
+.cs-prog { background: var(--amber-pale); color: var(--amber); }
+
+/* ══════════════════════════════
+   CONTACT
+══════════════════════════════ */
+.contact-wrap {
+  background: var(--off);
+  border-top: 1px solid var(--g200);
+}
+
+.contact-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-hed {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.contact-hed em { font-style: italic; color: var(--accent); }
+
+.contact-sub {
+  font-size: 1rem;
+  color: var(--g500);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.contact-links { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.clink {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.18s;
+}
+
+.clink:hover { border-color: var(--ink); transform: translateX(4px); box-shadow: var(--shadow-sm); }
+
+.clink-icon {
+  width: 32px; height: 32px;
+  border-radius: 7px;
+  background: var(--g100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.clink-label { font-family: var(--mono); font-size: 0.58rem; color: var(--g400); letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+.clink-val { font-size: 0.875rem; font-weight: 500; color: var(--ink); display: block; }
+.clink-arr { margin-left: auto; color: var(--g300); font-size: 0.75rem; transition: all 0.18s; }
+.clink:hover .clink-arr { color: var(--ink); transform: translateX(2px); }
+
+/* FORM */
+.cform { display: flex; flex-direction: column; gap: 1rem; }
+
+.cf-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.cf-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--g500);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cf-input {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  color: var(--ink);
+  padding: 0.8rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.18s;
+  width: 100%;
+}
+
+.cf-input::placeholder { color: var(--g300); }
+.cf-input:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(17,19,24,0.06); }
+
+textarea.cf-input { min-height: 120px; resize: none; }
+
+.cf-submit {
+  background: var(--ink);
+  color: white;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cf-submit:hover { background: var(--ink2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer {
+  background: var(--ink);
+  padding: 1.75rem 2rem;
+  text-align: center;
+}
+
+footer p {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.08em;
+}
+
+footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.7); }
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .profile-card { position: static; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .nav-menu { display: none; }
+}
+
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .hero-numbers { flex-wrap: wrap; gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-mark">JA</div>
+      <span class="logo-text">Joseph Akaadom</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certs">Certs</a></li>
+      <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge reveal">
+          <span class="dot-live"></span>
+          <span class="hero-badge-text">Open to opportunities · Worldwide</span>
+        </div>
+
+        <h1 class="hero-name reveal d1">
+          Joseph<br><em>Akaadom.</em>
+        </h1>
+
+        <div class="hero-role reveal d2">Digital Solutions Engineer</div>
+
+        <p class="hero-bio reveal d3">
+          I secure systems, analyze data, build games, and automate workflows. From hardening enterprise networks to shipping games so addictive you can't put them down — I bring technical depth across cybersecurity, software development, data analytics, and Power Platform. I don't just work in tech. I build with it.
+        </p>
+
+        <div class="hero-actions reveal d4">
+          <a href="#contact" class="btn btn-dark">Get in touch →</a>
+          <a href="#projects" class="btn btn-light">View my work</a>
+        </div>
+
+        <div class="hero-numbers reveal d5">
+          <div class="hn">
+            <div class="hn-num">4+</div>
+            <div class="hn-label">Years experience</div>
+          </div>
+          <div class="hn">
+            <div class="hn-num">8+</div>
+            <div class="hn-label">Projects shipped</div>
+          </div>
+          <div class="hn">
+            <div class="hn-num">Top 3%</div>
+            <div class="hn-label">TryHackMe</div>
+          </div>
+          <div class="hn">
+            <div class="hn-num">5</div>
+            <div class="hn-label">Disciplines</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE CARD -->
+      <div class="reveal d3">
+        <div class="profile-card">
+          <div class="pc-top">
+            <div class="pc-avatar">JA</div>
+            <div class="pc-name">Joseph Akaadom</div>
+            <div class="pc-title">Digital Solutions Engineer</div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-row">
+              <div class="pc-icon">📍</div>
+              <div>
+                <span class="pc-label">Location</span>
+                <span class="pc-val">Maryland, USA</span>
+              </div>
+            </div>
+            <div class="pc-row">
+              <div class="pc-icon">🎯</div>
+              <div>
+                <span class="pc-label">Focus Areas</span>
+                <span class="pc-val">Cybersecurity · Data · Dev · Automation</span>
+              </div>
+            </div>
+            <div class="pc-row">
+              <div class="pc-icon">🏅</div>
+              <div>
+                <span class="pc-label">Credentials</span>
+                <span class="pc-val">BSc Computer Science · Security+ (In Progress) · THM Top 3%</span>
+              </div>
+            </div>
+            <div class="pc-row">
+              <div class="pc-icon">✅</div>
+              <div>
+                <span class="pc-label">Availability</span>
+                <div><span class="open-pill"><span class="dot-live"></span>Open to Opportunities</span></div>
+              </div>
+            </div>
+            <div class="pc-row">
+              <div class="pc-icon">🌐</div>
+              <div>
+                <span class="pc-label">Work Style</span>
+                <span class="pc-val">Worldwide · Remote · Hybrid · On-site</span>
+              </div>
+            </div>
+            <div class="pc-row">
+              <div class="pc-icon">✉️</div>
+              <div>
+                <span class="pc-label">Email</span>
+                <span class="pc-val">jaakaadom@gmail.com</span>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/joseph-akaadom" target="_blank" rel="noopener noreferrer" class="pc-row" style="text-decoration:none;">
+              <div class="pc-icon">💼</div>
+              <div>
+                <span class="pc-label">LinkedIn</span>
+                <span class="pc-val">joseph-akaadom →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STRIP -->
+<div class="tech-strip">
+  <div class="tech-scroll">
+    <span class="tech-pill">Python</span>
+    <span class="tech-pill">Splunk</span>
+    <span class="tech-pill">Power BI</span>
+    <span class="tech-pill">C#</span>
+    <span class="tech-pill">Wireshark</span>
+    <span class="tech-pill">Active Directory</span>
+    <span class="tech-pill">Linux</span>
+    <span class="tech-pill">Nmap</span>
+    <span class="tech-pill">Snort</span>
+    <span class="tech-pill">Firewall</span>
+    <span class="tech-pill">Okta</span>
+    <span class="tech-pill">SailPoint IdentityIQ</span>
+    <span class="tech-pill">ServiceNow</span>
+    <span class="tech-pill">Unity</span>
+    <span class="tech-pill">Flutter</span>
+    <span class="tech-pill">React</span>
+    <span class="tech-pill">Microsoft 365</span>
+    <span class="tech-pill">Excel</span>
+    <span class="tech-pill">Power Automate</span>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="sh-eye">Core competencies</div>
+      <h2 class="sh-title">Five disciplines. One engineer.</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-cell reveal d1">
+        <div class="sc-num">01</div>
+        <span class="sc-icon">🛡️</span>
+        <div class="sc-name">Cybersecurity</div>
+        <div class="sc-desc">Blue team operations, IAM, threat detection, and network security. Defending enterprise environments from the inside out.</div>
+        <div class="sc-tags">
+          <span class="tag">Splunk</span><span class="tag">Wireshark</span><span class="tag">Nmap</span><span class="tag">Snort</span><span class="tag">Okta</span><span class="tag">SailPoint</span>
+        </div>
+      </div>
+
+      <div class="skill-cell reveal d2">
+        <div class="sc-num">02</div>
+        <span class="sc-icon">📊</span>
+        <div class="sc-name">Data Analytics</div>
+        <div class="sc-desc">Turning raw data into decisions. Dashboards, reports, and insights that business leaders actually use.</div>
+        <div class="sc-tags">
+          <span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Python</span><span class="tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-cell reveal d3">
+        <div class="sc-num">03</div>
+        <span class="sc-icon">🎮</span>
+        <div class="sc-name">Game & Software Dev</div>
+        <div class="sc-desc">Building games you can't stop playing and software that solves real problems. From mobile apps to full game systems engineered for addiction and replayability.</div>
+        <div class="sc-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Flutter</span><span class="tag">React</span>
+        </div>
+      </div>
+
+      <div class="skill-cell reveal d4">
+        <div class="sc-num">04</div>
+        <span class="sc-icon">⚡</span>
+        <div class="sc-name">Power Platform & Automation</div>
+        <div class="sc-desc">Eliminating repetitive work through smart automation. Workflows, bots, and apps built on Microsoft's Power Platform.</div>
+        <div class="sc-tags">
+          <span class="tag">Power Automate</span><span class="tag">Power BI</span><span class="tag">Microsoft 365</span>
+        </div>
+      </div>
+
+      <div class="skill-cell reveal d5">
+        <div class="sc-num">05</div>
+        <span class="sc-icon">🖥️</span>
+        <div class="sc-name">IT Support & Admin</div>
+        <div class="sc-desc">End-to-end IT support, user training, ticketing systems, and infrastructure. The backbone that keeps organizations running.</div>
+        <div class="sc-tags">
+          <span class="tag">Active Directory</span><span class="tag">ServiceNow</span><span class="tag">Linux</span><span class="tag">Microsoft 365</span>
+        </div>
+      </div>
+
+      <div class="skill-cell reveal d6">
+        <div class="sc-num">06</div>
+        <span class="sc-icon">🐍</span>
+        <div class="sc-name">Scripting & Automation</div>
+        <div class="sc-desc">Writing Python and PowerShell scripts that save hours of manual work. From security tooling to data pipelines to custom utilities.</div>
+        <div class="sc-tags">
+          <span class="tag">Python</span><span class="tag">Bash</span><span class="tag">APIs</span><span class="tag">CLI Tools</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section alt" id="experience">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="sh-eye">Work history</div>
+      <h2 class="sh-title">Where I've made an impact.</h2>
+    </div>
+
+    <div class="exp-list">
+      <div class="exp-card reveal d1">
+        <div class="exp-head">
+          <div class="exp-company">Exelon Corporation</div>
+          <span class="exp-period">2026 – Present</span>
+        </div>
+        <div class="exp-role">IAM Analyst · Intern</div>
+        <ul class="exp-bullets">
+          <li>Handle high-volume identity lifecycle tasks — password resets, access provisioning and deprovisioning — freeing senior team members to focus on complex security problems.</li>
+          <li>Resolve user access issues across enterprise systems including Active Directory and identity platforms, ensuring zero disruption to business operations.</li>
+          <li>Troubleshoot file share and permission issues in Active Directory, maintaining clean and auditable access records.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">Active Directory</span><span class="tag">Okta</span><span class="tag">SailPoint</span><span class="tag">ServiceNow</span><span class="tag">IAM</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal d2">
+        <div class="exp-head">
+          <div class="exp-company">Leti Arts</div>
+          <span class="exp-period">2021 – 2025</span>
+        </div>
+        <div class="exp-role">Software & Game Developer</div>
+        <ul class="exp-bullets">
+          <li>Designed and shipped multiple original games including African Legends, Puzzle Scout, and Sweave — building complete game systems from concept to release.</li>
+          <li>Strengthened the organization's security posture by protecting data, digital assets, and network infrastructure.</li>
+          <li>Developed and delivered a 6-month game development bootcamp where students built and shipped their own mini games — a first for the organization.</li>
+          <li>Set monthly KPIs and led product roadmaps, organized esports tournaments, and promoted titles at live events.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Flutter</span><span class="tag">Game Design</span><span class="tag">Security</span><span class="tag">Teaching</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal d3">
+        <div class="exp-head">
+          <div class="exp-company">Ghana Education Service</div>
+          <span class="exp-period">2021 – 2023</span>
+        </div>
+        <div class="exp-role">IT Helpdesk Administrator</div>
+        <ul class="exp-bullets">
+          <li>Built an in-house ticketing system from scratch, replacing ad-hoc support with a structured, trackable workflow for the first time.</li>
+          <li>Resolved a wide range of user hardware, software, and connectivity issues — maintaining uptime and user satisfaction across the organization.</li>
+          <li>Ran weekly "Friday Technology Crash Course" sessions — training non-technical staff on shortcuts, tools, and productivity techniques that stuck.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">Ticketing System</span><span class="tag">IT Support</span><span class="tag">User Training</span><span class="tag">Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="sh-eye">Featured work</div>
+      <h2 class="sh-title">Things I've built.</h2>
+    </div>
+
+    <div class="projects-grid">
+      <div class="proj-card reveal d1">
+        <div class="proj-top">
+          <span class="proj-icon">🎟️</span>
+          <span class="proj-badge pb-green">SHIPPED</span>
+        </div>
+        <div class="proj-name">GES Ticketing System</div>
+        <div class="proj-desc">Built an in-house helpdesk ticketing system for Ghana Education Service from the ground up — replacing informal support with a structured, trackable workflow.</div>
+        <div class="proj-tags"><span class="tag">Python</span><span class="tag">IT Support</span><span class="tag">Systems Design</span></div>
+      </div>
+
+      <div class="proj-card reveal d2">
+        <div class="proj-top">
+          <span class="proj-icon">🃏</span>
+          <span class="proj-badge pb-blue">LIVE</span>
+        </div>
+        <div class="proj-name">African Legends</div>
+        <div class="proj-desc">A match-3 puzzle game built under Leti Arts, featuring African mythological characters and original art — shipped and available to players.</div>
+        <div class="proj-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Game Design</span></div>
+      </div>
+
+      <div class="proj-card reveal d3">
+        <div class="proj-top">
+          <span class="proj-icon">🌍</span>
+          <span class="proj-badge pb-teal">EDUCATIONAL</span>
+        </div>
+        <div class="proj-name">Puzzle Scout</div>
+        <div class="proj-desc">An educational game that teaches kids the history of Ghana and Africa through interactive puzzles — learning disguised as fun.</div>
+        <div class="proj-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Ed-Tech</span></div>
+      </div>
+
+      <div class="proj-card reveal d4">
+        <div class="proj-top">
+          <span class="proj-icon">🎱</span>
+          <span class="proj-badge pb-blue">SHIPPED</span>
+        </div>
+        <div class="proj-name">Sweave</div>
+        <div class="proj-desc">An endless runner with a twist — players control a ball and dodge obstacles using a unique movement system that sets it apart from the genre.</div>
+        <div class="proj-tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Mechanics Design</span></div>
+      </div>
+
+      <div class="proj-card reveal d5">
+        <div class="proj-top">
+          <span class="proj-icon">🕹️</span>
+          <span class="proj-badge pb-amber">IN PROGRESS</span>
+        </div>
+        <div class="proj-name">Mini Game Warehouse</div>
+        <div class="proj-desc">A one-stop platform to play a collection of mini games and grind a live leaderboard — built for replayability and competitive fun.</div>
+        <div class="proj-tags"><span class="tag">Flutter</span><span class="tag">Game Dev</span><span class="tag">Leaderboard</span></div>
+      </div>
+
+      <div class="proj-card reveal d6">
+        <div class="proj-top">
+          <span class="proj-icon">⚡</span>
+          <span class="proj-badge pb-green">DEPLOYED</span>
+        </div>
+        <div class="proj-name">Power Automate Workflows</div>
+        <div class="proj-desc">Automated a wide range of repetitive organizational tasks using Power Automate — reducing manual effort and freeing teams to focus on higher-value work.</div>
+        <div class="proj-tags"><span class="tag">Power Automate</span><span class="tag">Microsoft 365</span><span class="tag">Automation</span></div>
+      </div>
+
+      <div class="proj-card reveal d1">
+        <div class="proj-top">
+          <span class="proj-icon">🖥️</span>
+          <span class="proj-badge pb-teal">ONGOING</span>
+        </div>
+        <div class="proj-name">Home Lab</div>
+        <div class="proj-desc">A personal cybersecurity lab environment for practising threat detection, network monitoring, log analysis, and blue team techniques hands-on.</div>
+        <div class="proj-tags"><span class="tag">Linux</span><span class="tag">Splunk</span><span class="tag">Wireshark</span><span class="tag">Networking</span></div>
+      </div>
+
+      <div class="proj-card reveal d2">
+        <div class="proj-top">
+          <span class="proj-icon">🐍</span>
+          <span class="proj-badge pb-blue">ONGOING</span>
+        </div>
+        <div class="proj-name">Python Security Scripts</div>
+        <div class="proj-desc">A growing collection of Python scripts for security automation — log parsing, port scanning, access review helpers, and custom alerting utilities.</div>
+        <div class="proj-tags"><span class="tag">Python</span><span class="tag">Security</span><span class="tag">Automation</span><span class="tag">CLI</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section alt" id="certs">
+  <div class="container">
+    <div class="sh reveal">
+      <div class="sh-eye">Credentials</div>
+      <h2 class="sh-title">Certifications & training.</h2>
+    </div>
+
+    <div class="certs-grid">
+      <div class="cert-card reveal d1">
+        <div class="cert-icon">🎓</div>
+        <div class="cert-name">BSc Computer Science</div>
+        <div class="cert-org">University · Completed</div>
+        <span class="cert-status cs-done">Verified</span>
+      </div>
+      <div class="cert-card reveal d2">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-name">CompTIA Security+</div>
+        <div class="cert-org">CompTIA</div>
+        <span class="cert-status cs-prog">In Progress</span>
+      </div>
+      <div class="cert-card reveal d3">
+        <div class="cert-icon">🎯</div>
+        <div class="cert-name">TryHackMe Top 3%</div>
+        <div class="cert-org">TryHackMe · Global Rank</div>
+        <span class="cert-status cs-done">Achieved</span>
+      </div>
+      <div class="cert-card reveal d4">
+        <div class="cert-icon">🔐</div>
+        <div class="cert-name">Security 101</div>
+        <div class="cert-org">TryHackMe · Path</div>
+        <span class="cert-status cs-done">Completed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="sh-eye reveal" style="margin-bottom:0.5rem">Open to opportunities</div>
+      <h2 class="contact-hed reveal d1">
+        Let's build<br>something <em>great.</em>
+      </h2>
+      <p class="contact-sub reveal d2">
+        I'm actively looking for roles in cybersecurity, data analytics, software development, or power platform automation. Based in Maryland, open to opportunities worldwide — remote, hybrid, or on-site. I respond within 24 hours.
+      </p>
+
+      <div class="contact-links reveal d3">
+        <a href="mailto:jaakaadom@gmail.com" class="clink">
+          <div class="clink-icon">✉️</div>
+          <div>
+            <span class="clink-label">Email</span>
+            <span class="clink-val">jaakaadom@gmail.com</span>
+          </div>
+          <span class="clink-arr">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/joseph-akaadom" target="_blank" rel="noopener noreferrer" class="clink">
+          <div class="clink-icon">💼</div>
+          <div>
+            <span class="clink-label">LinkedIn</span>
+            <span class="clink-val">linkedin.com/in/joseph-akaadom</span>
+          </div>
+          <span class="clink-arr">→</span>
+        </a>
+        <a href="https://tryhackme.com" target="_blank" class="clink">
+          <div class="clink-icon">🎯</div>
+          <div>
+            <span class="clink-label">TryHackMe</span>
+            <span class="clink-val">Top 3% Global · SOC Path</span>
+          </div>
+          <span class="clink-arr">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="cform reveal d2">
+      <div class="cf-group">
+        <label class="cf-label">Your name</label>
+        <input class="cf-input" type="text" placeholder="Jane Smith">
+      </div>
+      <div class="cf-group">
+        <label class="cf-label">Email address</label>
+        <input class="cf-input" type="email" placeholder="jane@company.com">
+      </div>
+      <div class="cf-group">
+        <label class="cf-label">Company / Role</label>
+        <input class="cf-input" type="text" placeholder="e.g. Acme Corp · Hiring Manager">
+      </div>
+      <div class="cf-group">
+        <label class="cf-label">Message</label>
+        <textarea class="cf-input" placeholder="Tell me about the opportunity..."></textarea>
+      </div>
+      <button class="cf-submit" onclick="this.innerHTML='Message sent ✓'; this.style.background='#1a7a4a'">
+        Send message →
+      </button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Joseph Akaadom · Digital Solutions Engineer · Maryland, USA · <a href="mailto:jaakaadom@gmail.com">jaakaadom@gmail.com</a></p>
+</footer>
+
+<script>
+// Nav scroll shadow
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('up', window.scrollY > 8));
+
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
